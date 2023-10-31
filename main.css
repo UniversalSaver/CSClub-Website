@@ -13,6 +13,10 @@ body {
     font-family: copperplate
 }
 
+p {
+    color: white
+}
+
 .text-div {
     background-color: black;
     border-radius: 10px;
