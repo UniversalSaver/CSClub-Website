@@ -1,0 +1,12 @@
+.centered {
+/*top and left don't work*/
+    transform: translate(+50%, +130%); /*Works?*/
+    align-content: auto;
+    font-size: 180px;
+    margin: auto;
+    position: auto;
+}
+
+.hidden {
+    color: white;
+}
