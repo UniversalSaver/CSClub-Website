@@ -1,0 +1,16 @@
+#my-name {
+    color: rgb(255, 153, 51);
+    text-align: center;
+}
+
+#my-courses-header {
+    color: green;
+}
+
+.courses {
+    color: white;
+}
+
+h2 {
+    color: green;
+}
