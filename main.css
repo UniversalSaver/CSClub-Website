@@ -41,3 +41,39 @@ td, table {
 a:visited, a:link {
     color: forestgreen;
 }
+
+.asset-layout-container{
+    display: grid;
+    background: black;
+    border-radius: 20px;
+}
+
+.asset-layout-container h1{
+    text-align: center;
+}
+
+.project-card{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: radial-gradient( #000000, #00ff00);
+    width: 300px;
+    height: 300px;
+    color: white;
+    margin: 20px;
+}
+
+.project-card:hover{
+    transition-duration: 1s;
+    transform: scale(1.1);
+}
+
+.project-card img{
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+}
