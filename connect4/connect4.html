@@ -1,10 +1,103 @@
+<!--
+TODO: 
+Update the buttons from the bottom to being the whole row and also make it invisible
+Redo the coloring to make it better ugly
+Make everything resize with screen size using only %
+Make the page less empty ?
+--> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="connect4.css">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Connect4</title>
 </head>
-<body>
 
+<!--
+Indexing is top left is A0 and bottom right is F6
+Buttons are labeled column0 to column6 and should be linked to a function
+To color set the id of the table data's styling to redPiece or yellowPiece
+The message id can be used for displaying messages to the user (Ex. Player 1's Turn)
+If there are any spaces in message it put each word on a new line (spaces become newlines). . .
+-->
+
+<body>
+    <div id="title">
+        <p>Connect 4</p>
+    </div>
+    <div class = "container">
+        <div class="board"> <!-- html for the connect4 board. Including the buttons to place the pieces-->
+            <table> 
+                <tr>
+                    <td><span class="empty" id="A0"></span></td>
+                    <td><span class="empty" id="A1"></span></td>
+                    <td><span class="empty" id="A2"></span></td>
+                    <td><span class="empty" id="A3"></span></td>
+                    <td><span class="empty" id="A4"></span></td>
+                    <td><span class="empty" id="A5"></span></td>
+                    <td><span class="empty" id="A6"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="empty" id="B0"></span></td>
+                    <td><span class="empty" id="B1"></span></td>
+                    <td><span class="empty" id="B2"></span></td>
+                    <td><span class="empty" id="B3"></span></td>
+                    <td><span class="empty" id="B4"></span></td>
+                    <td><span class="empty" id="B5"></span></td>
+                    <td><span class="empty" id="B6"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="empty" id="C0"></span></td>
+                    <td><span class="empty" id="C1"></span></td>
+                    <td><span class="empty" id="C2"></span></td>
+                    <td><span class="empty" id="C3"></span></td>
+                    <td><span class="empty" id="C4"></span></td>
+                    <td><span class="empty" id="C5"></span></td>
+                    <td><span class="empty" id="C6"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="empty" id="D0"></span></td>
+                    <td><span class="empty" id="D1"></span></td>
+                    <td><span class="empty" id="D2"></span></td>
+                    <td><span class="empty" id="D3"></span></td>
+                    <td><span class="empty" id="D4"></span></td>
+                    <td><span class="empty" id="D5"></span></td>
+                    <td><span class="empty" id="D6"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="empty" id="E0"></span></td>
+                    <td><span class="empty" id="E1"></span></td>
+                    <td><span class="empty" id="E2"></span></td>
+                    <td><span class="empty" id="E3"></span></td>
+                    <td><span class="empty" id="E4"></span></td>
+                    <td><span class="empty" id="E5"></span></td>
+                    <td><span class="empty" id="E6"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="empty" id="F0"></span></td>
+                    <td><span class="empty" id="F1"></span></td>
+                    <td><span class="empty" id="F2"></span></td>
+                    <td><span class="empty" id="F3"></span></td>
+                    <td><span class="empty" id="F4"></span></td>
+                    <td><span class="empty" id="F5"></span></td>
+                    <td><span class="empty" id="F6"></span></td>
+                </tr>
+                <tr>
+                    <td><button onclick="" id="column0">Place</td>
+                    <td><button onclick="" id="column1">Place</td>
+                    <td><button onclick="" id="column2">Place</td>
+                    <td><button onclick="" id="column3">Place</td>
+                    <td><button onclick="" id="column4">Place</td>
+                    <td><button onclick="" id="column5">Place</td>
+                    <td><button onclick="" id="column6">Place</td>
+                </tr>
+            </table>
+        </div>
+        <!--Display a message here? Ex. Player 1's turn???-->
+        <p class = "message"></p>
+    </div>
+    
 </body>
 </html>
