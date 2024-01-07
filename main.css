@@ -1,64 +1,20 @@
-
-body {
-    background-color: #EED9C4;
-    padding: 0px;
-    font-family: copperplate;
-    margin: 0px;
-}
-
-p {
-    color: white;
-}
-
-.left-introduction {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    align-items: flex-start;
-}
-
-.introduction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #F9FAF8;
-    padding: 100px 100px 100px 100px;
-    background-color: #000000;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.header-link {
-    text-decoration: none;
-    color: #F9FAF8;
-    font-family: "Anton";
-    font-size: 20px;
-}
-
-.header {
-    display: flex;
-    background-color: #2C5B91;
-    color: white;
-
-    justify-content: space-between;
-    padding: 0px 40px 0px 40px;
-}
-
-.logo{
-    display: flex;
-
-    gap: 20px;
-}
-
-.right-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
 .top-header {
     text-align: center;
     color: blueviolet;
+}
+
+h1 {
+    color: darkseagreen;
+}
+
+body {
+    background-color: grey;
+    padding: 0px;
+    font-family: copperplate
+}
+
+p {
+    color: white
 }
 
 .text-div {
@@ -66,7 +22,6 @@ p {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-    color: darkseagreen;
 }
 
 .names {
@@ -83,6 +38,6 @@ td, table {
     margin-right: auto;
 }
 
-a:visited, a:link .text-div {
+a:visited, a:link {
     color: forestgreen;
 }
