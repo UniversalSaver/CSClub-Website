@@ -5,7 +5,52 @@
     <title>Computer Science Club</title>
     <link rel="stylesheet" href="main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function featuredProject(dirName, divId, projectTitle) {
+            dirName = "Featured Projects/".concat(dirName, '/');
+
+            // console.log(dirName);
+            // console.log(divId);
+            // console.log(title);
+
+            var div = document.getElementById(divId);
+
+            // console.log(div);
+
+            var gameLink = document.createElement('a');
+            gameLink.setAttribute('href', dirName.concat('game_index.html'));
+
+            var gameDiv = document.createElement('div');
+            gameDiv.setAttribute('class', 'project-card');
+
+            var picture = document.createElement('img');
+            picture.setAttribute('src', dirName.concat('preview_image.png'));
+
+            var title = document.createElement('h2');
+            title.innerHTML = projectTitle;
+
+            gameDiv.appendChild(picture);
+            gameDiv.appendChild(title);
+
+            gameLink.appendChild(gameDiv);
+
+            div.appendChild(gameLink);
+
+            // <a href="Featured%20Projects/SnakeGame/snakeGame.html">
+            // <div class="project-card">
+            //     <img src="Featured%20Projects/SnakeGame/snake-game-preview.png">
+            //     <h2>
+            //         Title: The Snake Game
+            //     </h2>
+            // </div>
+            // </a>
+        }
+    </script>
+
 </head>
+
+
 <body>
 <!--
 This is a check for using GitHub
@@ -61,26 +106,22 @@ This is a check for using GitHub
         </tr>
         <tr class="names">
             <td><a href = "People/ian.html"> Ian W</a></td>
-            <td>Your Name</td>
+            <td><a href = "People/Zachary.html"></a>Zachary</td>
             <td>Your Name</td>
         </tr>
 
     </table>
 </div>
-<p><a href = "People/Zachary.html"><font size="0.1">Your Actual Name</font></a></p>
 
-<div class="asset-layout-container">
+<div class="asset-layout-container" id="featuredProjects">
     <h1>
         Featured Projects:
     </h1>
-    <a href="Featured%20Projects/SnakeGame/snakeGame.html">
-    <div class="project-card">
-        <img src="Featured%20Projects/SnakeGame/snake-game-preview.png">
-        <h2>
-            Title: The Snake Game
-        </h2>
-    </div>
-    </a>
 </div>
+
+<script>
+    featuredProject("SnakeGame", "featuredProjects", "Snake Game");
+</script>
+
 </body>
 </html>
