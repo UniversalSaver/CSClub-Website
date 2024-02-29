@@ -4,17 +4,84 @@
     <meta charset="UTF-8">
     <title>Computer Science Club</title>
     <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function featuredProject(dirName, divId, projectTitle) {
+            dirName = "Featured Projects/".concat(dirName, '/');
+
+            // console.log(dirName);
+            // console.log(divId);
+            // console.log(title);
+
+            var div = document.getElementById(divId);
+
+            // console.log(div);
+
+            var gameLink = document.createElement('a');
+            gameLink.setAttribute('href', dirName.concat('game_index.html'));
+
+            var gameDiv = document.createElement('div');
+            gameDiv.setAttribute('class', 'project-card');
+
+            var picture = document.createElement('img');
+            picture.setAttribute('src', dirName.concat('preview_image.png'));
+
+            var title = document.createElement('h2');
+            title.innerHTML = projectTitle;
+
+            gameDiv.appendChild(picture);
+            gameDiv.appendChild(title);
+
+            gameLink.appendChild(gameDiv);
+
+            div.appendChild(gameLink);
+
+            // <a href="Featured%20Projects/SnakeGame/snakeGame.html">
+            // <div class="project-card">
+            //     <img src="Featured%20Projects/SnakeGame/snake-game-preview.png">
+            //     <h2>
+            //         Title: The Snake Game
+            //     </h2>
+            // </div>
+            // </a>
+        }
+    </script>
+
 </head>
+
+
 <body>
 <!--
 This is a check for using GitHub
 -->
-<div class="text-div">
-    <h1 class="top-header">Welcome to the Bloor CI Computer Science Club's Website</h1>
+
+<div class="header">
+    <div class="logo">
+        <img src="images/bloor_ci_logo.png" alt="Bear" width="50px">
+        <h1>Bloor CI Computer Science Club</h1>
+    </div>
+
+    <div class="right-links">
+        <a href="#" class="header-link">Home</a>
+        <a href="#" class="header-link">Games</a>
+        <a href="#" class="header-link">About us</a>
+    </div>
+</div>
+
+<div class="introduction">
+    <div class="left-introduction">
+        <h1 class="subtitle">Welcome to the Bloor CI Computer Science Club's Website!</h1>
+        <h3>Bla bla bla bla bla</h3>
+    </div>
+
+    <div class="right-information">
+        <img src="images/cs_club_yearbook_photo.jpg" alt="Yearbook photo" width="600" height="auto">
+    </div>
 </div>
 
 <div class="text-div">
-    <h1 class="header">Here are our leaders:</h1>
+    <h1 class>Here are our leaders:</h1>
     <table>
         <tr class="names">
             <td><a href="People/Leads/Nabhan.html">Nabhan Rashid</a></td>
@@ -25,7 +92,7 @@ This is a check for using GitHub
 </div>
 
 <div class="text-div">
-    <h1 class="header">Here are our members:</h1>
+    <h1 class>Here are our members:</h1>
     <table>
         <tr class="names">
             <td>Your Name</td>
@@ -35,16 +102,27 @@ This is a check for using GitHub
         <tr class="names">
             <td>Your Name</td>
             <td>Your Name</td>
-            <td><a href="People/Kyrylo.html">Kyrylo Degtiarenko</a></td>
+            <td><a href="People/Kyrylo/Kyrylo.html">Kyrylo Degtiarenko</a></td>
         </tr>
         <tr class="names">
             <td><a href = "People/ian.html"> Ian W</a></td>
-            <td>Your Name</td>
+            <td><a href = "People/Zachary.html"></a>Zachary</td>
             <td>Your Name</td>
         </tr>
 
     </table>
 </div>
-<p><a href = "People/Zachary.html"><font size="0.1">Your Actual Name</font></a></p>
+
+<div class="asset-layout-container" id="featuredProjects">
+    <h1>
+        Featured Projects:
+    </h1>
+</div>
+
+<script>
+    featuredProject("SnakeGame", "featuredProjects", "Snake Game");
+    featuredProject("connect4", "featuredProjects", "Connect Four");
+</script>
+
 </body>
 </html>
