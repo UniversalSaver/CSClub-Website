@@ -1,5 +1,6 @@
 const boardMatrix = [];
 let turn = 1;
+let finish = false;
 
 function createBoard() {
     for (let i = 0; i < 6; i++) {
@@ -32,50 +33,54 @@ function findAvailableCells(matrix){
 }
 
 function addPoint(coll_num){
-    let colour;
-    let messageDiv = document.querySelector('.message')
-    if(turn % 2 == 0){
-        colour = 'R';
-    }
-    else{
-        colour = 'Y';
-    }
-
-    const avCells = findAvailableCells(boardMatrix);
-    const coords = avCells.find(e => e[1] == coll_num)
-
-    // ! Cell filling logic
-    if(coords){
-        boardMatrix[coords[0]][coords[1]] = colour;
-        css_colour = colour == 'R' ? 'red' : 'yellow';
-        updateBoard(coords[1], coords[0], css_colour);
-        if(checkWin(boardMatrix, colour, coords)){
-            messageDiv.innerHTML = `${(turn % 2 == 0 ? 'Red' : 'Yellow')} Player Wins!`;
-
-            document.addEventListener("dblclick", function() {
-                location.reload();
-            });
-        }else{
-            // ! Change the turn
-            turn++;
-            messageDiv.innerHTML = `${(turn % 2 == 0 ? 'Red' : 'Yellow')} Player's turn!`;
-            messageDiv.style.textDecoration = `underline ${turn % 2 == 0 ? 'red' : 'yellow'}`;
+    if(!finish){
+        let colour;
+        let messageDiv = document.querySelector('.message')
+        if(turn % 2 == 0){
+            colour = 'R';
         }
-    }else{
-        // Error answer
-        if(turn > 42){
-            messageDiv.innerHTML = "Draw";
-            document.addEventListener("dblclick", function() {
-                location.reload();
-            });
-        }else{
-            messageDiv.innerHTML = "Move is not possible (Make other move)";
-            document.addEventListener("click", function() {
-                // Remove the message div when clicked anywhere on the document
+        else{
+            colour = 'Y';
+        }
+
+        const avCells = findAvailableCells(boardMatrix);
+        const coords = avCells.find(e => e[1] == coll_num)
+
+        // ! Cell filling logic
+        if(coords){
+            boardMatrix[coords[0]][coords[1]] = colour;
+            css_colour = colour == 'R' ? 'red' : 'yellow';
+            updateBoard(coords[1], coords[0], css_colour);
+            if(checkWin(boardMatrix, colour, coords)){
+                messageDiv.innerHTML = `${(turn % 2 == 0 ? 'Red' : 'Yellow')} Player Wins!`;
+                finish = true;
+                setTimeout(() => {
+                    location.reload();
+                }, 5000);
+            }else{
+                // ! Change the turn
+                turn++;
                 messageDiv.innerHTML = `${(turn % 2 == 0 ? 'Red' : 'Yellow')} Player's turn!`;
                 messageDiv.style.textDecoration = `underline ${turn % 2 == 0 ? 'red' : 'yellow'}`;
-                
-            });
+            }
+        }else{
+            // Error answer
+            if(turn > 42){
+                messageDiv.innerHTML = "Draw";
+                document.addEventListener("dblclick", function() {
+                    location.reload();
+                });
+            }else{
+                messageDiv.innerHTML = "Move is not possible (Make other move)";
+                const timeout = setTimeout(() => {
+                    document.addEventListener("click", function() {
+                        // Remove the message div when clicked anywhere on the document
+                        messageDiv.innerHTML = `${(turn % 2 == 0 ? 'Red' : 'Yellow')} Player's turn!`;
+                        messageDiv.style.textDecoration = `underline ${turn % 2 == 0 ? 'red' : 'yellow'}`;
+                        
+                    })}, 100);
+                clearTimeout(timeout);
+            }
         }
     }
 }
