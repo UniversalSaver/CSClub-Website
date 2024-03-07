@@ -1,0 +1,18 @@
+fir = float(input("Enter a number: "))
+ope = input("Enter a operator: ")
+sec = float(input("Enter another number: "))
+
+if ope == "+" or ope == "plus":
+    print("Your answer is", fir + sec)
+
+elif ope == "-" or ope == "minus":
+    print("Your answer is", fir - sec)
+
+elif ope == "*" or ope == "multiply":
+    print("Your answer is", fir * sec)
+
+elif ope == "/" or ope == "divide":
+    if sec == 0 or fir == 0: print("Cannot divide by zero.")
+    else: print("The answer is", fir / sec)
+else:
+    print("You did not enter a valid operator.")
