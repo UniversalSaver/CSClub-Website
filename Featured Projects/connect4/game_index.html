@@ -13,6 +13,8 @@ Make the page less empty ?
     <link rel="stylesheet" href="connect4.css">
     <meta charset="UTF-8">
     <title>Connect4</title>
+    <script src="connect4.js"></script>
+    
 </head>
 
 <!--
@@ -85,13 +87,13 @@ If there are any spaces in message it put each word on a new line (spaces become
                     <td><span class="empty" id="F6"></span></td>
                 </tr>
                 <tr>
-                    <td><button onclick="" id="column0">Place</td>
-                    <td><button onclick="" id="column1">Place</td>
-                    <td><button onclick="" id="column2">Place</td>
-                    <td><button onclick="" id="column3">Place</td>
-                    <td><button onclick="" id="column4">Place</td>
-                    <td><button onclick="" id="column5">Place</td>
-                    <td><button onclick="" id="column6">Place</td>
+                    <td><button onclick="addPoint(0)" id="column0">Place</button></td>
+                    <td><button onclick="addPoint(1)" id="column1">Place</button></td>
+                    <td><button onclick="addPoint(2)" id="column2">Place</button></td>
+                    <td><button onclick="addPoint(3)" id="column3">Place</button></td>
+                    <td><button onclick="addPoint(4)" id="column4">Place</button></td>
+                    <td><button onclick="addPoint(5)" id="column5">Place</button></td>
+                    <td><button onclick="addPoint(6)" id="column6">Place</button></td>
                 </tr>
             </table>
         </div>
