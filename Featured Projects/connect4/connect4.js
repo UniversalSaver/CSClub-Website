@@ -1,3 +1,8 @@
+// WHITE is white space, 'red' is red space, 'yellow' is yellow space
+const YELLOW = 'yellow'
+const RED = 'red'
+const WHITE = 'white'
+
 const boardMatrix = [];
 let turn = 1;
 let finish = false;
@@ -6,7 +11,7 @@ function createBoard() {
     for (let i = 0; i < 6; i++) {
         const row = [];
         for (let j = 0; j < 7; j++) {
-            row.push('W');
+            row.push(WHITE);
         }
         boardMatrix.push(row);
     }
@@ -23,7 +28,7 @@ function findAvailableCells(matrix){
     let availableCells = [];
     for(let j = 0 ; j < matrix[0].length; j++) {
         for (let i = matrix.length-1; i >=0 ; i--) {
-                if (matrix[i][j] == 'W') {
+                if (matrix[i][j] == WHITE) {
                     availableCells.push([i, j]);
                     break;
                 }
@@ -37,10 +42,10 @@ function addPoint(coll_num){
         let colour;
         let messageDiv = document.querySelector('.message')
         if(turn % 2 == 0){
-            colour = 'R';
+            colour = RED;
         }
         else{
-            colour = 'Y';
+            colour = YELLOW;
         }
 
         const avCells = findAvailableCells(boardMatrix);
@@ -49,8 +54,7 @@ function addPoint(coll_num){
         // ! Cell filling logic
         if(coords){
             boardMatrix[coords[0]][coords[1]] = colour;
-            css_colour = colour == 'R' ? 'red' : 'yellow';
-            updateBoard(coords[1], coords[0], css_colour);
+            updateBoard(coords[1], coords[0], colour);
             if(checkWin(boardMatrix, colour, coords)){
                 messageDiv.innerHTML = `${(turn % 2 == 0 ? 'Red' : 'Yellow')} Player Wins!`;
                 finish = true;
