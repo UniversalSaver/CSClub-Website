@@ -1,7 +1,23 @@
 <head>
     <title>Tic Tac Toe</title>
+    <script>
+	    var ta = document.createElement('table');
+
+        for (int i = 0; i < 3; i++) {
+            var row = document.createElement('tr');
+            for (int j = 0; j < 3; j++) {
+                var data = document.createElement('td');
+                data.innerHTML = 'ahh';
+                row.appendChild(data);
+            }
+            ta.appendChild(row);
+        }
+        document.getElementById('hi').appendChild(ta);
+    </script>
 </head>
 
 <body>
-    <h1>Welcome to Tic Tac Toe (Under Construction)</h1>
+    <div id='hi'>
+        <h1>Welcome to Tic Tac Toe (Under Construction)</h1>
+    </div>
 </body>
